@@ -1,5 +1,5 @@
-import ./units/temperature
-import ./units/angle
+import ./temperature
+import ./angle
 
 #[ 
   Note: Using `==`the compiler gives priority to the language-default equality operator so this custom version is never applied.

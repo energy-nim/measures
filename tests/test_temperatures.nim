@@ -1,7 +1,6 @@
 import unittest
 
-import units
-import units/[angle, temperature]
+import units/[core, temperature]
 
 
 test "celsius tests":

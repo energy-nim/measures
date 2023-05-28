@@ -1,14 +1,12 @@
 import std/tables
-
+import ./base
 
 type
   TemperatureUnit* = enum
     Celsius,
     Kelvin,
     Farenheit
-  Temperature* = ref object
-    val: float
-    unit: TemperatureUnit
+  Temperature* = ref object of Unit[TemperatureUnit]
 
 
 proc `°C`*(val: float): Temperature =
@@ -50,8 +48,17 @@ proc to*(self: Temperature, unit: TemperatureUnit) =
   self.val = self.getValueAs(unit)
   self.unit = unit
 
-proc `==`*(self, other: Temperature): bool =
-  if self.unit == other.unit:
-    result = self.val == other.val
-  else:
-    result = self.val == other.getValueAs(self.unit)
+# proc `==`*[T: Temperature](self, other: T): bool =
+#   echo self.val
+#   echo self.unit
+#   if self.unit == other.unit:
+#     result = self.val == other.val
+#   else:
+#     result = self.val == other.getValueAs(self.unit)
+
+# proc `<`*(self, other: Temperature): bool =
+#   if self.unit == other.unit:
+#     result = self.val < other.val
+#   else:
+#     result = self.val < other.getValueAs(self.unit)
+

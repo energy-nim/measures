@@ -35,10 +35,10 @@ const equalityTable = {
 
 
 proc isOf*(self: Temperature, unit: TemperatureUnit): bool =
-    result = self.unit == unit 
+  result = self.unit == unit 
 
 proc getAs*(self: Temperature, unit: TemperatureUnit): float =
-    result = equalityTable[(self.unit, unit)](self.val)
+  result = equalityTable[(self.unit, unit)](self.val)
 
 proc to*(self: Temperature, unit: TemperatureUnit) =
   if self.unit == unit:

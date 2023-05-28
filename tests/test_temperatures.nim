@@ -1,6 +1,7 @@
 import unittest
 
-import units/temperature
+import units
+import units/[angle, temperature]
 
 
 test "celsius tests":
@@ -17,9 +18,9 @@ test "celsius tests":
   check testingTemp.isOf(Kelvin)
   check testingTemp.getValueAs(Celsius) == 25.0
 
-  check 25.°C == 25.°C
-  check 25.°C == 77.°F
-  check 25.°C == 298.15.°K
+  check 25.°C === 25.°C
+  check 25.°C === 77.°F
+  check 25.°C === 298.15.°K
   check 25.°C != 25.1.°C
   check 25.°C != 0.°F
   check 25.°C != 0.°K

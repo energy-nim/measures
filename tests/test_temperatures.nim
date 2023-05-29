@@ -2,7 +2,6 @@ import unittest
 
 import units/[core, temperature]
 
-
 test "celsius tests":
   let testingTemp = 25.°C
   check testingTemp.isOf(Celsius)

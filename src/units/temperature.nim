@@ -32,33 +32,4 @@ const equalityTable = {
 }.toTable
 
 
-proc isOf*(self: Temperature, unit: TemperatureUnit): bool {.inline.} = self.unit == unit
-
-proc getValue*(self: Temperature): float {.inline.} = self.val
-
-proc getUnit*(self: Temperature): TemperatureUnit {.inline.} = self.unit
-
-proc getValueAs*(self: Temperature, unit: TemperatureUnit): float =
-  result = equalityTable[(self.unit, unit)](self.val)
-
-proc to*(self: Temperature, unit: TemperatureUnit) =
-  if self.unit == unit:
-    return
-
-  self.val = self.getValueAs(unit)
-  self.unit = unit
-
-# proc `==`*[T: Temperature](self, other: T): bool =
-#   echo self.val
-#   echo self.unit
-#   if self.unit == other.unit:
-#     result = self.val == other.val
-#   else:
-#     result = self.val == other.getValueAs(self.unit)
-
-# proc `<`*(self, other: Temperature): bool =
-#   if self.unit == other.unit:
-#     result = self.val < other.val
-#   else:
-#     result = self.val < other.getValueAs(self.unit)
-
+proc equalities*(self: Temperature): auto = equalityTable

@@ -22,18 +22,4 @@ const equalityTable = {
 }.toTable
 
 
-proc isOf*(self: Angle, unit: AngleUnit): bool {.inline.} = self.unit == unit
-
-proc getValue*(self: Angle): float {.inline.} = self.val
-
-proc getUnit*(self: Angle): AngleUnit {.inline.} = self.unit
-
-proc getValueAs*(self: Angle, unit: AngleUnit): float =
-  result = equalityTable[(self.unit, unit)](self.val)
-
-proc to*(self: Angle, unit: AngleUnit) =
-  if self.unit == unit:
-    return
-
-  self.val = self.getValueAs(unit)
-  self.unit = unit
+proc equalities*(self: Angle): auto = equalityTable

@@ -1,8 +1,8 @@
 <h1 align="center">Units</h1>
-<h4 align="center">Set default wallpapers for Pantheon's Dark & Light mode</h4>
+<h4 align="center"> General purpose measuring units datatypes with integrated conversions and definitions.</h4>
 
 <p align="center">
-  <a href="https://energy-nim.org/"><img src="https://j8s5.c14.e2-5.dev/energy/resources/Energy badge.png" alt="Visit webpage" /></a>
+  <a href="https://energy-nim.org/"><img src="https://j8s5.c14.e2-5.dev/energy/resources/Energy badge.png" width="300px" height="100px" alt="Visit webpage" /></a>
 </p>
 
 <p align="center">

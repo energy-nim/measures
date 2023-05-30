@@ -1,0 +1,20 @@
+name: Github Actions
+on: [push, pull_request]
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        nim-version: ['1.6.8', '1.6.x']
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: jiro4989/setup-nim-action@v1
+      with:
+        nim-version: ${{ matrix.nim-version }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - run: nim c -r tests/test_angles.nim
+    - run: nim c -r tests/test_temperatures.nim

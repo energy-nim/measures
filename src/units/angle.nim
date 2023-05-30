@@ -15,9 +15,9 @@ proc rad*(val: float): Angle =
 
 
 const equalityTable = {
-  (Degrees, Degrees): proc(d: float): float = d * 1,
+  (Degrees, Degrees): proc(d: float): float = d,
   (Degrees, Radians): proc(d: float): float = d * (PI / 180),
-  (Radians, Radians): proc(r: float): float = r * 1,
+  (Radians, Radians): proc(r: float): float = r,
   (Radians, Degrees): proc(r: float): float = r * (180 / PI)
 }.toTable
 

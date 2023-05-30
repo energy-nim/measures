@@ -6,10 +6,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/JeysonFlores/switcher/blob/main/LICENSE">
+  <a href="https://github.com/energy-nim/units/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge">
   </a>
-  <a href="https://github.com/JeysonFlores/switcher/releases">
+  <a href="https://github.com/energy-nim/units/releases">
     <img src="https://img.shields.io/badge/Release-v%201.0-green.svg?style=for-the-badge">
   </a>
 </p>

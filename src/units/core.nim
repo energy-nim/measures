@@ -39,7 +39,7 @@ proc `~=`*[T: Temperature | Angle](self, other: T): bool =
   echo self.val
   echo self.unit
   if self.unit == other.unit:
-    result = almostEqual(self.val,other.val)
+    result = almostEqual(self.val, other.val)
   else:
     result = almostEqual(self.val, other.getValueAs(self.unit))
 

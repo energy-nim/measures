@@ -1,11 +1,13 @@
-import std/[tables, math]
+import std/[math, sugar, tables]
 import ./base
+
 
 type
   AngleUnit* = enum
     Degrees,
     Radians
   Angle* = ref object of Unit[AngleUnit]
+
 
 proc `°`*(val: float): Angle =
   result = Angle(val: val, unit: Degrees)
@@ -15,10 +17,10 @@ proc rad*(val: float): Angle =
 
 
 const equalityTable = {
-  (Degrees, Degrees): proc(d: float): float = d,
-  (Degrees, Radians): proc(d: float): float = d * (PI / 180),
-  (Radians, Radians): proc(r: float): float = r,
-  (Radians, Degrees): proc(r: float): float = r * (180 / PI)
+  (Degrees, Degrees): (d: float) => d,
+  (Degrees, Radians): (d: float) => d * (PI / 180),
+  (Radians, Radians): (r: float) => r,
+  (Radians, Degrees): (r: float) => r * (180 / PI)
 }.toTable
 
 

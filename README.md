@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/energy-nim/units/blob/main/LICENSE">
+  <a href="https://github.com/energy-nim/units/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/energy-nim/units/releases">

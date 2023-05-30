@@ -24,4 +24,4 @@ const equalityTable = {
 }.toTable
 
 
-proc equalities*(self: Angle): auto = equalityTable
+proc equalities*(self: typedesc[Angle]): auto = equalityTable

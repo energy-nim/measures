@@ -33,4 +33,4 @@ const equalityTable = {
 }.toTable
 
 
-proc equalities*(self: Temperature): auto = equalityTable
+proc equalities*(self: typedesc[Temperature]): auto = equalityTable

@@ -6,7 +6,7 @@ import ./angle
 proc isOf*[T, U](self: T, unit: U): bool {.inline.} = self.unit == unit
 
 proc getValueAs*[T, U](self: T, unit: U): float =
-  result = self.equalities[(self.unit, unit)](self.val)
+  result = T.equalities[(self.unit, unit)](self.val)
 
 proc to*[T, U](self: T, unit: U) =
   if self.unit == unit:

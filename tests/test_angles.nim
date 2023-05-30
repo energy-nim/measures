@@ -1,6 +1,6 @@
 import unittest
 
-import units/[core, angle]
+import measures/[core, angle]
 import std/math
 
 test "degrees tests":

@@ -1,5 +1,5 @@
-<h1 align="center">Units</h1>
-<h4 align="center"> General purpose measuring units datatypes with integrated conversions and definitions.</h4>
+<h1 align="center">Measures</h1>
+<h4 align="center">General purpose measuring units datatypes with integrated conversions and definitions.</h4>
 
 <p align="center">
   <a href="https://energy-nim.org/"><img src="https://j8s5.c14.e2-5.dev/energy/resources/energy-badge.svg" alt="Visit webpage" /></a>

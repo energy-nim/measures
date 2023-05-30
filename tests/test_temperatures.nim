@@ -1,6 +1,6 @@
 import unittest
 
-import units/[core, temperature]
+import measures/[core, temperature]
 
 test "celsius tests":
   let testingTemp = 25.°C

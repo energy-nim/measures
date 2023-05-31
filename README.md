@@ -13,3 +13,10 @@
     <img src="https://img.shields.io/badge/Release-v%201.0-green.svg?style=for-the-badge">
   </a>
 </p>
+
+
+
+### Modules
+- `core` Contains the functionalities and operators for the measure units.
+- `angle` Measurement units for angles (Degrees and Radians).
+- `temperature` Measurement units for temperatures (Celsius, Farenheit and Kelvin).

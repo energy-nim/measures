@@ -20,24 +20,18 @@ proc to*[T, U](self: T, unit: U) =
   Further research is needed
 ]#
 proc `===`*[T: Temperature | Angle](self, other: T): bool =
-  echo self.val
-  echo self.unit
   if self.unit == other.unit:
     result = self.val == other.val
   else:
     result = self.val == other.getValueAs(self.unit)
 
 proc `!=`*[T: Temperature | Angle](self, other: T): bool =
-  echo self.val
-  echo self.unit
   if self.unit == other.unit:
     result = self.val != other.val
   else:
     result = self.val != other.getValueAs(self.unit)
 
 proc `~=`*[T: Temperature | Angle](self, other: T): bool =
-  echo self.val
-  echo self.unit
   if self.unit == other.unit:
     result = almostEqual(self.val, other.val)
   else:

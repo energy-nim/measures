@@ -1,6 +1,7 @@
-import unittest
+import
+  unittest,
+  measures/[core, temperature]
 
-import measures/[core, temperature]
 
 test "celsius tests":
   let testingTemp = 25.°C
@@ -37,6 +38,13 @@ test "farenheit tests":
   check testingTemp.isOf(Kelvin)
   check testingTemp.getValueAs(Farenheit) == 77.0
 
+  check 77.°F === 77.°F
+  check 77.°F === 25.°C
+  check 77.°F === 298.15.°K
+  check 77.°F != 77.1.°F
+  check 77.°F != 0.°C
+  check 77.°F != 0.°K
+
 test "kelvin tests":
   let testingTemp = 298.15.°K
   check testingTemp.isOf(Kelvin)
@@ -50,3 +58,10 @@ test "kelvin tests":
   testingTemp.to(Farenheit)
   check testingTemp.isOf(Farenheit)
   check testingTemp.getValueAs(Kelvin) == 298.15
+
+  check 298.15.°K === 298.15.°K
+  check 298.15.°K === 25.°C
+  check 298.15.°K === 77.°F
+  check 298.15.°K != 298.16.°K
+  check 298.15.°K != 0.°C
+  check 298.15.°K != 0.°F

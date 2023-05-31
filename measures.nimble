@@ -1,6 +1,6 @@
 # Package
 
-version       = "1.0.0"
+version       = "1.0.1"
 author        = "Jeyson Antonio Flores Deras"
 description   = "General purpose measuring units datatypes with integrated conversions and definitions."
 license       = "MIT"

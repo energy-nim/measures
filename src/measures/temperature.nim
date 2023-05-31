@@ -1,5 +1,6 @@
-import std/[sugar, tables]
-import ./unit
+import 
+  std/[sugar, tables],
+  ./unit
 
 
 type

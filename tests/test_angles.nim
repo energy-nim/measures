@@ -1,6 +1,5 @@
 import
-  std/math,
-  unittest,
+  std/[math, unittest],
   measures/[core, angle]
 
 

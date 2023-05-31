@@ -1,6 +1,7 @@
-import std/[math, tables]
-import ./temperature
-import ./angle
+import 
+  std/[math, tables],
+  ./temperature,
+  ./angle
 
 
 proc isOf*[T, U](self: T, unit: U): bool {.inline.} = self.unit == unit

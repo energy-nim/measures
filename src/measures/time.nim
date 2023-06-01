@@ -13,48 +13,48 @@ type
   Time* = object of Unit[BiggestFloat, TimeUnits]
 
 
-proc mls*(value: float): Time =
+proc mls*(value: BiggestFloat): Time =
   result = Time(value: value, unit: Milliseconds)
 
-proc secs*(value: float): Time =
+proc secs*(value: BiggestFloat): Time =
   result = Time(value: value, unit: Seconds)
 
-proc mins*(value: float): Time =
+proc mins*(value: BiggestFloat): Time =
   result = Time(value: value, unit: Minutes)
 
-proc hours*(value: float): Time =
+proc hours*(value: BiggestFloat): Time =
   result = Time(value: value, unit: Hours)
 
-proc days*(value: float): Time =
+proc days*(value: BiggestFloat): Time =
   result = Time(value: value, unit: Days)
 
 
 const equalityTable = {
-  (Milliseconds, Milliseconds): (m: float) => m,
-  (Milliseconds, Seconds): (m: float) => m / 1000,
-  (Milliseconds, Minutes): (m: float) => (m / 1000) / 60,
-  (Milliseconds, Hours): (m: float) => ((m / 1000) / 60) / 60,
-  (Milliseconds, Days): (m: float) => (((m / 1000) / 60) / 60) / 24,
-  (Seconds, Milliseconds): (s: float) => s * 1000,
-  (Seconds, Seconds): (s: float) => s,
-  (Seconds, Minutes): (s: float) => s / 60,
-  (Seconds, Hours): (s: float) => (s / 60) / 60,
-  (Seconds, Days): (s: float) => ((s / 60) / 60) / 24,
-  (Minutes, Milliseconds): (m: float) => m * 60 * 1000,
-  (Minutes, Seconds): (m: float) => m * 60,
-  (Minutes, Minutes): (m: float) => m,
-  (Minutes, Hours): (m: float) => m / 60,
-  (Minutes, Days): (m: float) => (m / 60) / 60,
-  (Hours, Milliseconds): (h: float) => h * 60 * 60 * 1000,
-  (Hours, Seconds): (h: float) => h * 60 * 60,
-  (Hours, Minutes): (h: float) => h * 60,
-  (Hours, Hours): (h: float) => h,
-  (Hours, Days): (h: float) => h / 24,
-  (Days, Milliseconds): (d: float) => d * 24 * 60 * 60 * 1000,
-  (Days, Seconds): (d: float) => d * 24 * 60 * 60,
-  (Days, Minutes): (d: float) => d * 24 * 60,
-  (Days, Hours): (d: float) => d * 24,
-  (Days, Days): (d: float) => d,
+  (Milliseconds, Milliseconds): (m: BiggestFloat) => m,
+  (Milliseconds, Seconds): (m: BiggestFloat) => m / 1000,
+  (Milliseconds, Minutes): (m: BiggestFloat) => (m / 1000) / 60,
+  (Milliseconds, Hours): (m: BiggestFloat) => ((m / 1000) / 60) / 60,
+  (Milliseconds, Days): (m: BiggestFloat) => (((m / 1000) / 60) / 60) / 24,
+  (Seconds, Milliseconds): (s: BiggestFloat) => s * 1000,
+  (Seconds, Seconds): (s: BiggestFloat) => s,
+  (Seconds, Minutes): (s: BiggestFloat) => s / 60,
+  (Seconds, Hours): (s: BiggestFloat) => (s / 60) / 60,
+  (Seconds, Days): (s: BiggestFloat) => ((s / 60) / 60) / 24,
+  (Minutes, Milliseconds): (m: BiggestFloat) => m * 60 * 1000,
+  (Minutes, Seconds): (m: BiggestFloat) => m * 60,
+  (Minutes, Minutes): (m: BiggestFloat) => m,
+  (Minutes, Hours): (m: BiggestFloat) => m / 60,
+  (Minutes, Days): (m: BiggestFloat) => (m / 60) / 60,
+  (Hours, Milliseconds): (h: BiggestFloat) => h * 60 * 60 * 1000,
+  (Hours, Seconds): (h: BiggestFloat) => h * 60 * 60,
+  (Hours, Minutes): (h: BiggestFloat) => h * 60,
+  (Hours, Hours): (h: BiggestFloat) => h,
+  (Hours, Days): (h: BiggestFloat) => h / 24,
+  (Days, Milliseconds): (d: BiggestFloat) => d * 24 * 60 * 60 * 1000,
+  (Days, Seconds): (d: BiggestFloat) => d * 24 * 60 * 60,
+  (Days, Minutes): (d: BiggestFloat) => d * 24 * 60,
+  (Days, Hours): (d: BiggestFloat) => d * 24,
+  (Days, Days): (d: BiggestFloat) => d,
 }.toTable
 
 

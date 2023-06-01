@@ -7,14 +7,14 @@ type
   AngleUnit* = enum
     Degrees,
     Radians
-  Angle* = ref object of Unit[AngleUnit]
+  Angle* = ref object of Unit[float, AngleUnit]
 
 
-proc `°`*(val: float): Angle =
-  result = Angle(val: val, unit: Degrees)
+proc `°`*(value: float): Angle =
+  result = Angle(value: value, unit: Degrees)
 
-proc rad*(val: float): Angle =
-  result = Angle(val: val, unit: Radians)
+proc rad*(value: float): Angle =
+  result = Angle(value: value, unit: Radians)
 
 
 const equalityTable = {

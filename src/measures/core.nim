@@ -6,14 +6,14 @@ import
 
 proc isOf*[T, U](self: T, unit: U): bool {.inline.} = self.unit == unit
 
-proc getValueAs*[T, U](self: T, unit: U): float =
-  result = T.equalities[(self.unit, unit)](self.val)
+proc getValueAs*[T, U](self: T, unit: U): BiggestFloat =
+  result = T.equalities[(self.unit, unit)](self.value)
 
 proc to*[T, U](self: T, unit: U) =
   if self.unit == unit:
     return
 
-  self.val = self.getValueAs(unit)
+  self.value = self.getValueAs(unit)
   self.unit = unit
 
 #[
@@ -22,21 +22,21 @@ proc to*[T, U](self: T, unit: U) =
 ]#
 proc `===`*[T: Temperature | Angle](self, other: T): bool =
   if self.unit == other.unit:
-    result = self.val == other.val
+    result = self.value == other.value
   else:
-    result = self.val == other.getValueAs(self.unit)
+    result = self.value == other.getValueAs(self.unit)
 
 proc `!=`*[T: Temperature | Angle](self, other: T): bool =
   if self.unit == other.unit:
-    result = self.val != other.val
+    result = self.value != other.value
   else:
-    result = self.val != other.getValueAs(self.unit)
+    result = self.value != other.getValueAs(self.unit)
 
 proc `~=`*[T: Temperature | Angle](self, other: T): bool =
   if self.unit == other.unit:
-    result = almostEqual(self.val, other.val)
+    result = almostEqual(self.value, other.value)
   else:
-    result = almostEqual(self.val, other.getValueAs(self.unit))
+    result = almostEqual(self.value, other.getValueAs(self.unit))
 
 
 export tables

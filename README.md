@@ -15,8 +15,18 @@
 </p>
 
 
+### Installation
+
+`nimble install measures`
+
 
 ### Modules
+
 - `core` Contains the functionalities and operators for the measure units.
 - `angle` Measurement units for angles (Degrees and Radians).
 - `temperature` Measurement units for temperatures (Celsius, Farenheit and Kelvin).
+
+
+### Acknowledgements
+
+- [Jeyson Antonio Flores Deras](https://github.com/JeysonFlores) - Main contributor and maintainer

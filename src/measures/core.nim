@@ -38,5 +38,17 @@ proc `~=`*[T: Temperature | Angle](self, other: T): bool =
   else:
     result = almostEqual(self.value, other.getValueAs(self.unit))
 
+proc `+`*[T: Temperature | Angle](self, other: T): T =
+  if self.unit == other.unit:
+    result = T(value: self.value + other.value, unit: self.unit)
+  else:
+    result = T(value: self.value + other.getValueAs(self.unit), unit: self.unit)
+
+proc `-`*[T: Temperature | Angle](self, other: T): T =
+  if self.unit == other.unit:
+    result = T(value: self.value - other.value, unit: self.unit)
+  else:
+    result = T(value: self.value - other.getValueAs(self.unit), unit: self.unit)
+
 
 export tables

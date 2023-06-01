@@ -24,6 +24,30 @@ test "celsius tests":
   check 25.°C != 0.°F
   check 25.°C != 0.°K
 
+  check (20.°C + 5.°C) === 25.°C
+  check (20.°C + 5.°C) === 77.°F
+  check (20.°C + 5.°C) === 298.15.°K
+  check (20.°C + 41.°F) === 25.°C
+  check (20.°C + 41.°F) === 77.°F
+  check (20.°C + 41.°F) === 298.15.°K
+  check (20.°C + 278.15.°K) === 25.°C
+  check (20.°C + 278.15.°K) === 77.°F
+  check (20.°C + 278.15.°K) === 298.15.°K
+
+  check (30.°C - 5.°C) === 25.°C
+  check (30.°C - 5.°C) === 77.°F
+  check (30.°C - 5.°C) === 298.15.°K
+  check (30.°C - 41.°F) === 25.°C
+  check (30.°C - 41.°F) === 77.°F
+  check (30.°C - 41.°F) === 298.15.°K
+  check (30.°C - 278.15.°K) === 25.°C
+  check (30.°C - 278.15.°K) === 77.°F
+  check (30.°C - 278.15.°K) === 298.15.°K
+  
+  check (20.°C + 50.°F - 278.15.°K) === 25.°C
+  check (20.°C + 50.°F - 278.15.°K) === 77.°F
+  check (20.°C + 50.°F - 278.15.°K) === 298.15.°K
+
 test "farenheit tests":
   var testingTemp = 77.°F
   check testingTemp.isOf(Farenheit)

@@ -1,4 +1,4 @@
-import 
+import
   std/[math, sugar, tables],
   ./unit
 

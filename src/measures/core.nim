@@ -50,5 +50,11 @@ proc `-`*[T: Temperature | Angle](self, other: T): T =
   else:
     result = T(value: self.value - other.getValueAs(self.unit), unit: self.unit)
 
+proc `*`*[T: Temperature | Angle](self: T, value: float): T =
+  result = T(value: self.value * value, unit: self.unit)
+
+proc `/`*[T: Temperature | Angle](self: T, value: float): T =
+  result = T(value: self.value / value, unit: self.unit)
+
 
 export tables

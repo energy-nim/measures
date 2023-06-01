@@ -33,3 +33,20 @@ test "radians test":
   check PI.rad === PI.rad
   check PI.rad != 0.°
   check PI.rad != 0.rad
+
+test "angles arithmetics":
+  check (100.° + 80.°) === 180.°
+  check (1.rad + 2.rad) === 3.rad
+  check (20.° + PI.rad) === 200.°
+
+  check (200.° - 20.°) === 180.°
+  check (2.rad - 1.rad) === 1.rad
+
+  check (100.° + PI.rad - 30.°) === 250.°
+  check (100.° + PI.rad + 80.°) === (2 * PI).rad
+
+  check (90.° * 2) === 180.°
+  check (PI.rad * 2) === (2 * PI).rad
+
+  check (270.° / 3) === 90.°
+  check (3.rad / 3) === 1.rad

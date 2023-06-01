@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/energy-nim/units/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.0-green.svg?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Release-v%201.1.0-green.svg?style=for-the-badge">
   </a>
 </p>
 

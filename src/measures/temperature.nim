@@ -8,7 +8,7 @@ type
     Celsius,
     Kelvin,
     Farenheit
-  Temperature* = ref object of Unit[float, TemperatureUnit]
+  Temperature* = object of Unit[float, TemperatureUnit]
 
 
 proc `°C`*(value: float): Temperature =

@@ -4,7 +4,7 @@ import
 
 
 test "degrees tests":
-  let myDeg = 180.°
+  var myDeg = 180.°
   check myDeg.isOf(Degrees)
   check myDeg.getValueAs(Radians) == PI
   
@@ -21,7 +21,7 @@ test "degrees tests":
   check 180.° != 0.rad
 
 test "radians test":
-  let myRad = PI.rad
+  var myRad = PI.rad
   check myRad.isOf(Radians)
   check myRad.getValueAs(Degrees) == 180.0
 

@@ -1,4 +1,4 @@
 type
-  Unit*[V, U] = ref object of RootObj
+  Unit*[V, U] = object of RootObj
     value*: V
     unit*: U

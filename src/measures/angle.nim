@@ -7,7 +7,7 @@ type
   AngleUnit* = enum
     Degrees,
     Radians
-  Angle* = ref object of Unit[float, AngleUnit]
+  Angle* = object of Unit[float, AngleUnit]
 
 
 proc `°`*(value: float): Angle =

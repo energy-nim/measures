@@ -9,7 +9,7 @@ proc isOf*[T, U](self: T, unit: U): bool {.inline.} = self.unit == unit
 proc getValueAs*[T, U](self: T, unit: U): BiggestFloat =
   result = T.equalities[(self.unit, unit)](self.value)
 
-proc to*[T, U](self: T, unit: U) =
+proc to*[T, U](self: var T, unit: U) =
   if self.unit == unit:
     return
 

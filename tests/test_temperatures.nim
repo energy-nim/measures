@@ -4,7 +4,7 @@ import
 
 
 test "celsius tests":
-  let testingTemp = 25.°C
+  var testingTemp = 25.°C
   check testingTemp.isOf(Celsius)
   check testingTemp.getValueAs(Farenheit) == 77.0
   check testingTemp.getValueAs(Kelvin) == 298.15
@@ -25,7 +25,7 @@ test "celsius tests":
   check 25.°C != 0.°K
 
 test "farenheit tests":
-  let testingTemp = 77.°F
+  var testingTemp = 77.°F
   check testingTemp.isOf(Farenheit)
   check testingTemp.getValueAs(Celsius) == 25.0
   check testingTemp.getValueAs(Kelvin) == 298.15
@@ -46,7 +46,7 @@ test "farenheit tests":
   check 77.°F != 0.°K
 
 test "kelvin tests":
-  let testingTemp = 298.15.°K
+  var testingTemp = 298.15.°K
   check testingTemp.isOf(Kelvin)
   check testingTemp.getValueAs(Celsius) == 25.0
   check testingTemp.getValueAs(Farenheit) == 77.0

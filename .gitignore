@@ -1,2 +1,3 @@
 tests/test_temperatures
 tests/test_angles
+tests/test_information

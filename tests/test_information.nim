@@ -37,3 +37,42 @@ test "terabytes test (standard)":
   check 1.tb === 1000000.mb
   check 1.tb === 1000.gb
   check 1.tb === 1.tb
+
+
+Information.setConversionMode(Binary)
+
+
+test "bytes test (binary)":
+  check 1.b === 1.b
+  check 1.b === 0.0009765625.kb
+  check 1.b === 0.00000095367431640625.mb
+  check 1.b === 0.0000000009313225746154785.gb     # Observe how imprecise it becomes when the 
+  check 1.b === 0.0000000000009094947017729282.tb  # conversion gap becomes bigger
+
+test "kilobytes test (binary)":
+  check 1.kb === 1024.b
+  check 1.kb === 1.kb
+  check 1.kb === 0.0009765625.mb
+  check 1.kb === 0.00000095367431640625.gb
+  check 1.kb === 0.0000000009313225746154785.tb
+
+test "megabytes test (binary)":
+  check 1.mb === 1048576.b
+  check 1.mb === 1024.kb
+  check 1.mb === 1.mb
+  check 1.mb === 0.0009765625.gb
+  check 1.mb === 0.00000095367431640625.tb
+
+test "gigabytes test (binary)":
+  check 1.gb === 1073741824.b
+  check 1.gb === 1048576.kb
+  check 1.gb === 1024.mb
+  check 1.gb === 1.gb
+  check 1.gb === 0.0009765625.tb
+
+test "terabytes test (binary)":
+  check 1.tb === 1099511627776.0.b
+  check 1.tb === 1073741824.kb
+  check 1.tb === 1048576.mb
+  check 1.tb === 1024.gb
+  check 1.tb === 1.tb

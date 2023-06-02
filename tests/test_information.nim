@@ -46,8 +46,8 @@ test "bytes test (binary)":
   check 1.b === 1.b
   check 1.b === 0.0009765625.kb
   check 1.b === 0.00000095367431640625.mb
-  check 1.b === 0.0000000009313225746154785.gb     # Observe how imprecise it becomes when the 
-  check 1.b === 0.0000000000009094947017729282.tb  # conversion gap becomes bigger
+  check 1.b === 0.0000000009313225746154785.gb    # Observe how imprecise it becomes when the
+  check 1.b === 0.0000000000009094947017729282.tb # conversion gap becomes bigger
 
 test "kilobytes test (binary)":
   check 1.kb === 1024.b

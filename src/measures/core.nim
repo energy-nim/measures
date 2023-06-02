@@ -1,7 +1,8 @@
 import
   std/[math, tables],
   ./temperature,
-  ./angle
+  ./angle,
+  ./time
 
 
 proc isOf*[T, U](self: T, unit: U): bool {.inline.} = self.unit == unit
@@ -20,13 +21,16 @@ proc to*[T, U](self: var T, unit: U) =
   Note: Using `==`the compiler gives priority to the language-default equality operator so this custom version is never applied.
   Further research is needed
 ]#
-proc `===`*[T: Temperature | Angle](self, other: T): bool =
+proc `===`*[T](self, other: T): bool =
   if self.unit == other.unit:
     result = self.value == other.value
   else:
     result = self.value == other.getValueAs(self.unit)
 
-proc `!=`*[T: Temperature | Angle](self, other: T): bool =
+proc `!=`*[T:
+  Temperature |
+  Angle       |
+  Time](self, other: T): bool =
   if self.unit == other.unit:
     result = self.value != other.value
   else:

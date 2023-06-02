@@ -6,7 +6,7 @@ import
 
 
 type
-  OperableUnit = Angle | Information | Temperature    
+  OperableUnit = Angle | Information | Temperature
 
 
 proc isOf*[T, U](self: T, unit: U): bool {.inline.} = self.unit == unit
@@ -60,7 +60,6 @@ proc `*`*[T: OperableUnit](self: T, value: float): T =
 
 proc `/`*[T: OperableUnit](self: T, value: float): T =
   result = T(value: self.value / value, unit: self.unit)
-
 
 
 export tables

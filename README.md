@@ -25,6 +25,7 @@
 - `core` Contains the functionalities and operators for the measure units.
 - `angle` Measurement units for angles (Degrees and Radians).
 - `temperature` Measurement units for temperatures (Celsius, Farenheit and Kelvin).
+- `information` Measurement units for digital information (Bytes, Kilobytes, Megabytes, Gigabytes and Terabytes).
 
 
 ### Acknowledgements

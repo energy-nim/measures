@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/energy-nim/units/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.0-green.svg?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Release-v%201.1.0-green.svg?style=for-the-badge">
   </a>
 </p>
 
@@ -25,6 +25,7 @@
 - `core` Contains the functionalities and operators for the measure units.
 - `angle` Measurement units for angles (Degrees and Radians).
 - `temperature` Measurement units for temperatures (Celsius, Farenheit and Kelvin).
+- `information` Measurement units for digital information (Bytes, Kilobytes, Megabytes, Gigabytes and Terabytes).
 
 
 ### Acknowledgements

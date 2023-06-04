@@ -1,4 +1,4 @@
-import 
+import
   std/[sugar, tables],
   ./unit
 
@@ -8,17 +8,17 @@ type
     Celsius,
     Kelvin,
     Farenheit
-  Temperature* = ref object of Unit[TemperatureUnit]
+  Temperature* = object of Unit[float, TemperatureUnit]
 
 
-proc `°C`*(val: float): Temperature =
-  result = Temperature(val: val, unit: Celsius)
+proc `°C`*(value: float): Temperature =
+  result = Temperature(value: value, unit: Celsius)
 
-proc `°F`*(val: float): Temperature =
-  result = Temperature(val: val, unit: Farenheit)
+proc `°F`*(value: float): Temperature =
+  result = Temperature(value: value, unit: Farenheit)
 
-proc `°K`*(val: float): Temperature =
-  result = Temperature(val: val, unit: Kelvin)
+proc `°K`*(value: float): Temperature =
+  result = Temperature(value: value, unit: Kelvin)
 
 
 const equalityTable = {

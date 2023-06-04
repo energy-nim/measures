@@ -18,3 +18,4 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
     - run: nim c -r tests/test_angles.nim
     - run: nim c -r tests/test_temperatures.nim
+    - run: nim c -r tests/test_information.nim

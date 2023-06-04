@@ -7,6 +7,9 @@ import
 
 type
   OperableUnit = Angle | Information | Temperature
+  ComparableUnit = concept x
+    x.value is float | float64 | BiggestFloat
+    x.unit
 
 
 proc isOf*[T, U](self: T, unit: U): bool {.inline.} = self.unit == unit
@@ -21,17 +24,14 @@ proc to*[T, U](self: var T, unit: U) =
   self.value = self.getValueAs(unit)
   self.unit = unit
 
-#[
-  Note: Using `==`the compiler gives priority to the language-default equality operator so this custom version is never applied.
-  Further research is needed
-]#
-proc `===`*[T: OperableUnit](self, other: T): bool =
+
+proc `==`*(self, other: ComparableUnit): bool =
   if self.unit == other.unit:
     result = self.value == other.value
   else:
     result = self.value == other.getValueAs(self.unit)
 
-proc `!==`*[T: OperableUnit](self, other: T): bool =
+proc `!=`*(self, other: ComparableUnit): bool =
   if self.unit == other.unit:
     result = self.value != other.value
   else:
@@ -42,6 +42,7 @@ proc `~=`*[T: OperableUnit](self, other: T): bool =
     result = almostEqual(self.value, other.value)
   else:
     result = almostEqual(self.value, other.getValueAs(self.unit))
+
 
 proc `+`*[T: OperableUnit](self, other: T): T =
   if self.unit == other.unit:

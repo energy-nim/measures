@@ -50,3 +50,35 @@ test "angles arithmetics":
 
   check (270.° / 3) == 90.°
   check (3.rad / 3) == 1.rad
+
+test "angle-specific operations (degrees)":
+  var myAngle = 720.°
+
+  myAngle.truncate
+  check myAngle.value == 0
+
+  myAngle.value = 810
+  myAngle.truncate
+  check myAngle.value == 90
+
+  myAngle.value = -810 # after truncating would be -90
+  myAngle.normalize # -90 + 360
+  check myAngle.value == 270
+
+  myAngle.value = -810 # after normalizing would be 270
+  myAngle.invert # 360 - 270
+  check myAngle.value == 90
+
+test "angle-specific operations (radians)":
+  var myAngle = (3 * PI).rad
+
+  myAngle.truncate
+  check myAngle.value == PI
+
+  myAngle.value = -3 * PI # after truncating would be -PI
+  myAngle.normalize # -PI + 2PI
+  check myAngle.value == PI
+
+  myAngle.value = -5 * PI # after normalizing would be PI
+  myAngle.invert # 2PI - PI
+  check myAngle.value == PI
